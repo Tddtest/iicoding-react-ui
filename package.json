@@ -1,0 +1,53 @@
+{
+  "name": "@iicoding/ui",
+  "version": "0.0.2",
+  "description": "one Components by React",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "authors": [
+    "qdkfgcs@163.com"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@iicoding/react-icons": "^0.0.13",
+    "@iicoding/utils": "^0.0.24",
+    "markdown-to-jsx": "^7.3.2",
+    "nanoid": "^5.0.4",
+    "react-syntax-highlighter": "^15.5.0"
+  }
+}

@@ -1,0 +1,30 @@
+.icd-icon-blur {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 40px;
+  // height: 40px;
+
+  .icd-bg {
+    width: 50%;
+    min-width: 20px;
+    height: 50%;
+    min-height: 20px;
+    position: absolute;
+    // top: 8px;
+    // left: 8px;
+    z-index: -2;
+  }
+
+  .icd-bg-ff {
+    width: 48%;
+    height: 48%;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+}

@@ -1,0 +1,60 @@
+/**
+* @auth: dmx
+* @time: 2022/6/16
+* @func:
+**/
+@borderWidth: 2px;
+@front-end: #f06292;
+@back-end: #f57c00;
+
+.icd-blockquote {
+  position: relative;
+  padding: 24px 14px;
+  margin: 20px;
+  border: 6px dotted;
+  border-radius: 4px;
+  filter: hue-rotate(360deg);
+  clip-path: inset(8% 2% 8% 0);
+  border-image: linear-gradient(45deg, @front-end, @back-end) 1;
+  animation: huerotate 20s infinite linear;
+  // transition: all .3s ease-out;
+  font-size: 14px;
+
+  &::before {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 3em;
+    color: @front-end;
+    content: '\201C';
+  }
+
+  &::after {
+    position: absolute;
+    right: 20px;
+    bottom: -15px;
+    font-size: 3em;
+    color: @front-end;
+    content: '\201D';
+  }
+
+  &:hover {
+    // background-color: fade(@front-end, 60%);
+    animation-play-state: paused;
+  }
+
+  @keyframes huerotate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}

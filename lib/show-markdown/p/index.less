@@ -1,0 +1,59 @@
+/**
+* @auth: dmx
+* @time: 2022/6/15
+* @func:
+**/
+@borderWidth: 2px;
+@front-end: #f06292;
+
+.icd-p {
+  margin: 10px 0;
+  border-radius: 6px;
+
+  .icd-span {
+    display: block;
+    line-height: 1.5;
+  }
+}
+
+.icd-note {
+  position: relative;
+  padding: 20px 20px 16px;
+  margin-bottom: 30px;
+  // margin: 0 20px;
+  // border: 1px dotted @front-end;
+  border-radius: 6px;
+  filter: hue-rotate(360deg);
+  // clip-path: inset(0 round @borderWidth + 2px);
+  // border-image: linear-gradient(45deg, rgba(@browser), @read) 1;
+  // animation: huerotate 20s infinite linear;
+  box-shadow: rgba(24, 32, 79, 0.25) 0 10px 50px;
+  backdrop-filter: saturate(1) blur(40px);
+  background-color: rgba(255, 255, 255, .2);
+
+  .icd-tips {
+    display: flex;
+    font-size: 18px;
+    // color: @front-end;
+    justify-content: flex-start;
+    align-items: center;
+
+    .icd-note-icon {
+      margin-right: 6px;
+    }
+  }
+
+  strong {
+    color: @front-end;
+  }
+
+  @keyframes huerotate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+}
