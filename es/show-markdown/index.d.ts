@@ -13,6 +13,7 @@ import './index.less';
 interface IProps {
     mdContent: string;
     options?: MarkdownToJSX.Options;
+    overrides?: MarkdownToJSX.Options['overrides'];
 }
 declare const ShowMarkdown: React.NamedExoticComponent<IProps>;
 export default ShowMarkdown;

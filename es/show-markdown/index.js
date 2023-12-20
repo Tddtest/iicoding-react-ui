@@ -42,15 +42,15 @@ var getTitleTag = function getTitleTag(level) {
 };
 var S = function S(props) {
   var mdContent = props.mdContent,
-    options = props.options;
-  console.log(props);
+    options = props.options,
+    overrides = props.overrides;
   return /*#__PURE__*/React.createElement(Markdown, {
     className: "show-markdown",
     options: _objectSpread(_objectSpread({}, options), {}, {
       slugify: function slugify(str) {
         return str;
       },
-      overrides: {
+      overrides: _objectSpread({
         h1: {
           component: getTitleTag(1)
         },
@@ -102,10 +102,7 @@ var S = function S(props) {
         kbd: {
           component: Kbd
         }
-        // tip: { component: Em },
-        // ol: { component: Ol },
-        // li: { component: Li },
-      }
+      }, overrides)
     })
   }, mdContent);
 };

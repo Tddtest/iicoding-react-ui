@@ -1,13 +1,10 @@
 {
   "name": "@iicoding/ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "one Components by React",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "authors": [
-    "qdkfgcs@163.com"
-  ],
   "license": "MIT",
+  "module": "es/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "lib",
@@ -35,13 +32,6 @@
       "prettier --parser=typescript --write"
     ]
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "@iicoding/react-icons": "^0.0.13",
@@ -49,5 +39,15 @@
     "markdown-to-jsx": "^7.3.2",
     "nanoid": "^5.0.4",
     "react-syntax-highlighter": "^15.5.0"
-  }
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "qdkfgcs@163.com"
+  ]
 }
