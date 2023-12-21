@@ -9,5 +9,5 @@ export interface FullIconBackgroundProps {
     bgStyle?: React.CSSProperties;
     ffStyle?: React.CSSProperties;
 }
-declare const FillIconBg: React.NamedExoticComponent<FullIconBackgroundProps>;
-export default FillIconBg;
+declare const FullIconBackground: React.NamedExoticComponent<FullIconBackgroundProps>;
+export default FullIconBackground;

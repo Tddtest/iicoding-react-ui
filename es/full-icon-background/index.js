@@ -111,5 +111,5 @@ var F = function F(props) {
     className: "icd-bg-ff"
   }));
 };
-var FillIconBg = /*#__PURE__*/React.memo(F);
-export default FillIconBg;
+var FullIconBackground = /*#__PURE__*/React.memo(F);
+export default FullIconBackground;

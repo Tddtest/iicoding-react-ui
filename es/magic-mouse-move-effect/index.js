@@ -142,7 +142,7 @@ var M = function M() {
     };
   }, []);
   return /*#__PURE__*/React.createElement("div", {
-    id: "icdMagicMouseEffect"
+    id: "icd-magic-mouse-effect"
   });
 };
 var MagicMouseMoveEffect = /*#__PURE__*/React.memo(M);

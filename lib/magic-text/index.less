@@ -1,0 +1,112 @@
+@keyframes background-pan {
+  from {
+    background-position: 0 center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from, to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+//
+//body {
+//  background-color: rgb(10, 10, 10);
+//  display: grid;
+//  height: 100vh;
+//  margin: 0;
+//  overflow: hidden;
+//  place-items: center;
+//}
+
+.star-box {
+  display: grid;
+  color: white;
+  // font-family: "Rubik", sans-serif;
+  // font-size: clamp(2em, 2vw, 4em);
+  font-weight: 700;
+  place-items: center;
+  @front-end: #f06292;
+  @back-end: #f57c00;
+  @straddle-end: #ff0;
+  @browser: #11c2a5;
+  @computer: #76ff03;
+  @algorithm: #4fc3f7;
+  @read: #f2c8fa;
+
+  //--purple: rgb(123, 31, 162);
+  //--violet: rgb(103, 58, 183);
+  //--pink: rgb(244, 143, 177);
+  --purple: @straddle-end;
+  --violet: @computer;
+  --pink: @front-end;
+}
+
+.star-box > .magic {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.star-box > .magic > .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+.star-box > .magic > .magic-star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+.star-box > .magic > .magic-star > svg > path {
+  // fill: var(--violet);
+}
+
+.star-box > .magic > .magic-text {
+  // white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  animation: background-pan 10s linear;
+  animation-iteration-count: infinite;
+  background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &.noAnimation {
+    animation-iteration-count: 1;
+  }
+}

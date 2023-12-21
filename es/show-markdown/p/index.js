@@ -36,7 +36,7 @@ var P = function P(props) {
   if (isStrong && !isBlockquote) {
     return /*#__PURE__*/React.createElement("div", {
       className: "icd-note"
-    }, /*#__PURE__*/React.createElement("p", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "icd-tips"
     }, /*#__PURE__*/React.createElement(FullIconBackground, {
       style: {
@@ -117,7 +117,7 @@ var P = function P(props) {
           str = str.replaceAll('\n', replaceStr);
         }
         var child = str.split(replaceStr);
-        return /*#__PURE__*/React.createElement("p", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "icd-p"
         }, child.map(function (str, idx) {
           return /*#__PURE__*/React.createElement("span", {
@@ -128,7 +128,7 @@ var P = function P(props) {
       }
     }
   }
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "icd-p"
   }, children);
 };

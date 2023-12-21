@@ -9,15 +9,15 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  **/
 import * as React from 'react';
 import { PrismLight } from 'react-syntax-highlighter';
-import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
-import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
-import less from 'react-syntax-highlighter/dist/cjs/languages/prism/less';
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
-import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
-import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
-import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown';
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
+import less from 'react-syntax-highlighter/dist/cjs/languages/prism/less';
+import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown';
+import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
 PrismLight.registerLanguage('tsx', tsx);
 PrismLight.registerLanguage('scss', scss);
 PrismLight.registerLanguage('less', less);

@@ -13,22 +13,22 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
  * @return:
  * @updateTime:
  **/
-import * as React from 'react';
 import Markdown from 'markdown-to-jsx';
-import HrDepartment from "./hr-department";
-import TitleTag from "./h-title";
-import CodeBlock from "./code";
-import PreBlock from "./pre";
-import TargetOpen from "./taget-open";
-import ImageTag from "./img";
-import TagP from "./p";
+import * as React from 'react';
 import TagBlockquote from "./blockquote";
-import TagTable from "./table";
-import Kbd from "./kbd";
-import Em from "./em";
+import CodeBlock from "./code";
 import Del from "./del";
-import Ol from "./ol";
+import Em from "./em";
+import TitleTag from "./h-title";
+import HrDepartment from "./hr-department";
+import ImageTag from "./img";
+import Kbd from "./kbd";
 import Li from "./li";
+import Ol from "./ol";
+import TagP from "./p";
+import PreBlock from "./pre";
+import TagTable from "./table";
+import TargetOpen from "./taget-open";
 import Ul from "./ul";
 export * from "./markdown-content-actions";
 import "./index.less";
@@ -168,5 +168,5 @@ var S = function S(props) {
     })
   }, mdContent));
 };
-var ShowMarkdown = /*#__PURE__*/React.memo(S);
+export var ShowMarkdown = /*#__PURE__*/React.memo(S);
 export default ShowMarkdown;
