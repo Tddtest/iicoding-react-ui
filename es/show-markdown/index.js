@@ -92,11 +92,12 @@ var S = function S(props) {
     r: "10"
   }))), /*#__PURE__*/React.createElement(Markdown, {
     className: "show-markdown",
-    options: _objectSpread(_objectSpread({}, options), {}, {
+    options: _objectSpread(_objectSpread({
       slugify: function slugify(str) {
         return str;
-      },
-      overrides: {
+      }
+    }, options), {}, {
+      overrides: _objectSpread({
         hr: {
           component: HrDepartment,
           props: {
@@ -163,7 +164,7 @@ var S = function S(props) {
         li: {
           component: Li
         }
-      }
+      }, options === null || options === void 0 ? void 0 : options.overrides)
     })
   }, mdContent));
 };
