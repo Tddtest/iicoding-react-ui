@@ -149,3 +149,4 @@ export var getDirectory = function getDirectory(article) {
   }).join(DIRECTORY_ID_SPLIT));
   return allSection.flat(1);
 };
+export default getDirectory;
