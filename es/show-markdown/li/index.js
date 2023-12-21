@@ -43,9 +43,7 @@ var getUlChild = function getUlChild(children, p) {
     if (isString(child)) {
       return child;
     }
-    console.log('p---外层', p);
     if (isObject(child.type) && child.type.displayName === 'ul') {
-      console.log('p---内层', p);
       return /*#__PURE__*/React.cloneElement(child, {
         parentIdx: p
       });
@@ -60,7 +58,6 @@ var L = function L(props) {
     parentIdx = _props$parentIdx === void 0 ? 1 : _props$parentIdx,
     isOl = props.isOl,
     other = _objectWithoutProperties(props, _excluded);
-  console.log('parentIdx---', parentIdx);
   var idx = React.useMemo(function () {
     return getSerialNumber(parentIdx, selfIdx || 1);
   }, [parentIdx, selfIdx]);
