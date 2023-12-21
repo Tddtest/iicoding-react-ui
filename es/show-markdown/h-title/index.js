@@ -15,12 +15,12 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @return:
  * @updateTime:
  **/
-import * as React from 'react';
+import { Full202312179Full, Full23943115Full, Full23943118Full, Full23943258Full, Full23943308Full, FullIconCc22Full, FullIconCc42Full } from '@iicoding/react-icons';
 import classNames from 'classnames';
+import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { Full23943308Full, Full202312179Full, FullIconCc42Full, FullIconCc22Full, Full23943115Full, Full23943118Full, Full23943258Full } from '@iicoding/react-icons';
-import { DIRECTORY_ID_SPLIT } from "../constants";
 import FullIconBackground from "../../full-icon-background";
+import { DIRECTORY_ID_SPLIT } from "../constants";
 import "./index.less";
 var hIcon = [{
   style: {

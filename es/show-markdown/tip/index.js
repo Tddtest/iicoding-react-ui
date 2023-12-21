@@ -1,7 +1,7 @@
-import * as React from 'react';
-import classNames from 'classnames';
-import { Full202312174Full, FullIconCc27Full, Full23943404Full } from '@iicoding/react-icons';
+import { Full202312174Full, Full23943404Full, FullIconCc27Full } from '@iicoding/react-icons';
 import { isObject } from '@iicoding/utils';
+import classNames from 'classnames';
+import * as React from 'react';
 import FullIconBackground from "../../full-icon-background";
 import "./index.less";
 var T = function T(props) {

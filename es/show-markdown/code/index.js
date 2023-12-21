@@ -10,8 +10,8 @@ import * as React from 'react';
 // import ClipboardJS from 'clipboard';
 // import domtoimage from 'dom-to-image';
 // import { saveAs } from 'file-saver';
-import SvgCircle from "../svg-circle";
 import CodeBlockHighlight from "../../react-syntax-highlighter";
+import SvgCircle from "../svg-circle";
 import "./index.less";
 var C = function C(props) {
   var _match$;

@@ -8,8 +8,8 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @func: markdown img 标签解析
  **/
 import * as React from 'react';
-import "./index.less";
 import ImageIcd from "../../image-icd";
+import "./index.less";
 // import GlobalModal from '@/components/global-modal';
 
 var I = function I(props) {

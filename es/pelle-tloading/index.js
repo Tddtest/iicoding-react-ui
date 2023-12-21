@@ -12,8 +12,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @return:
  * @updateTime:
  **/
-import * as React from 'react';
 import classNames from 'classnames';
+import * as React from 'react';
 import "./index.less";
 var loadingArr = ['赤', '橙', '黄', '绿', '青', '蓝', '紫'];
 var Loading = function Loading(props) {

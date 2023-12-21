@@ -9,7 +9,8 @@
 }
 
 @keyframes scale {
-  from, to {
+  from,
+  to {
     transform: scale(0);
   }
 
@@ -96,14 +97,14 @@
   animation: background-pan 10s linear;
   animation-iteration-count: infinite;
   background: linear-gradient(
-      to right,
-      var(--purple),
-      var(--violet),
-      var(--pink),
-      var(--purple)
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
   );
   background-size: 200%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
   &.noAnimation {

@@ -1,11 +1,11 @@
 .icd-alert-tip {
   @borderWidth: 2px;
-  .type(@color, @opacity: .3) {
+  .type(@color, @opacity: 0.3) {
     color: @color;
     border: 1px solid hsl(@color, @opacity);
     box-shadow: rgba(@color, 0.5) 0 10px 50px;
 
-    &:before {
+    &::before {
       background-color: @color;
     }
   }
@@ -24,16 +24,16 @@
   // clip-path: inset(0 round @borderWidth + 2px);
   // border-image: linear-gradient(45deg, rgba(@browser), @read) 1;
   // animation: huerotate 20s infinite linear;
-  box-shadow: rgba(24, 32, 79, 0.25) 0 10px 50px;
+  box-shadow: rgba(24, 32, 79, 25%) 0 10px 50px;
   backdrop-filter: saturate(1) blur(40px);
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, 50%);
   cursor: pointer;
 
   em {
     font-style: normal;
   }
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 25%;
@@ -42,10 +42,10 @@
     height: 50%;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
-  };
+  }
 
   &.err {
-    @color: #F55E88;
+    @color: #f55e88;
     .type(@color);
   }
 

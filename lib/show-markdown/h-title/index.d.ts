@@ -1,11 +1,3 @@
-/**
- * @auth: dmx
- * @time: 2022/6/15
- * @func: h3
- * @params:
- * @return:
- * @updateTime:
- **/
 import * as React from 'react';
 import './index.less';
 interface IProps extends ITagProps {

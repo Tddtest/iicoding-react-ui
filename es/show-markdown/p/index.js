@@ -13,11 +13,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @return:
  * @updateTime:
  **/
-import * as React from 'react';
 import { Full23943367Full } from '@iicoding/react-icons';
 import { isString } from '@iicoding/utils';
-import Tip from "../tip";
+import * as React from 'react';
 import FullIconBackground from "../../full-icon-background";
+import Tip from "../tip";
 import "./index.less";
 var P = function P(props) {
   var children = props.children,
