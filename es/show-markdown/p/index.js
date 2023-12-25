@@ -18,6 +18,7 @@ import { isString } from '@iicoding/utils';
 import * as React from 'react';
 import FullIconBackground from "../../full-icon-background";
 import Tip from "../tip";
+import { LINE_REPLACE_STR, PLACEHOLDER_REPLACE_STR } from "../../show-markdown/constants";
 import "./index.less";
 var P = function P(props) {
   var children = props.children,
@@ -51,8 +52,8 @@ var P = function P(props) {
   if (Array.isArray(children) && children[0]) {
     var _children = _slicedToArray(children, 1),
       str = _children[0];
-    var noReplaceStr = "'iiCoding-a-b-c-d-e-f'";
-    var replaceStr = 'a-b-c-d-e-f-g-iiCoding';
+    var noReplaceStr = "'".concat(PLACEHOLDER_REPLACE_STR, "'");
+    var replaceStr = LINE_REPLACE_STR;
     if (isString(str)) {
       var lastChild = children.at(-1);
       var spliterator = ':::';
