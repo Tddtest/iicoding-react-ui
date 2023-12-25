@@ -1,6 +1,6 @@
 {
   "name": "@iicoding/ui",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "one Components by React",
   "license": "MIT",
   "module": "es/index.js",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
-    "@iicoding/react-icons": "^0.0.13",
+    "@iicoding/react-icons": "^0.0.15",
     "@iicoding/utils": "^0.0.27",
     "markdown-to-jsx": "^7.3.2",
     "nanoid": "^5.0.4",
