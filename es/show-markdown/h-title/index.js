@@ -108,8 +108,10 @@ var H = function H(props) {
     });
   }, [id]);
   var tagChildren = /*#__PURE__*/React.createElement("div", {
+    className: "icd-title-box"
+  }, /*#__PURE__*/React.createElement(FullIconBackground, hIcon[level]), /*#__PURE__*/React.createElement("span", {
     className: "icd-title-text"
-  }, /*#__PURE__*/React.createElement(FullIconBackground, hIcon[level]), children);
+  }, children));
   return /*#__PURE__*/React.createElement("h".concat(level), tagProps, tagChildren);
 };
 var TitleTag = /*#__PURE__*/React.memo(H);

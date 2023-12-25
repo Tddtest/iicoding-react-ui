@@ -26,7 +26,7 @@ var M = function M() {
       minimumDistanceBetweenStars: 75,
       glowDuration: 75,
       maximumGlowPointSpacing: 10,
-      colors: ['249 146 253', '252 254 255', '222, 126, 136', '223, 191, 41', '81, 190, 31', '204, 69, 114'],
+      colors: ['249 146 253', '252 254 255', '222 126 136', '223 191 41', '81 190 31', '204 69 114'],
       sizes: ['1.4rem', '1rem', '0.6rem'],
       animations: ['fall-1', 'fall-2', 'fall-3']
     };
@@ -116,22 +116,26 @@ var M = function M() {
       }
     };
     var handleOnMove = function handleOnMove(e) {
-      var isMobile = /Mobile|Android|iPhone/i.test(navigator.userAgent);
-      if (isMobile) {
-        return;
-      }
       var mousePosition = {
         x: e.clientX,
         y: e.clientY
       };
-      var idx = 20;
-      var x = mousePosition.x,
-        y = mousePosition.y;
-      var _window = window,
-        innerWidth = _window.innerWidth,
-        innerHeight = _window.innerHeight;
-      if (x > innerWidth - idx || x < idx || y - idx > innerHeight || y < idx) {
-        return;
+      try {
+        var isMobile = /Mobile|Android|iPhone/i.test(navigator.userAgent);
+        if (isMobile) {
+          return;
+        }
+        var idx = 20;
+        var x = mousePosition.x,
+          y = mousePosition.y;
+        var _window = window,
+          innerWidth = _window.innerWidth,
+          innerHeight = _window.innerHeight;
+        if (x > innerWidth - idx || x < idx || y - idx > innerHeight || y < idx) {
+          return;
+        }
+      } catch (error) {
+        console.log('error----', error);
       }
       adjustLastMousePosition(mousePosition);
       var now = new Date().getTime(),

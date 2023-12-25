@@ -64,7 +64,12 @@ var execute = function execute(source) {
     return !record.hasParent;
   });
   if (source.length > 1) {
-    execute(source);
+    var type = source[0].type;
+    if (source.some(function (s) {
+      return s.type !== type;
+    })) {
+      execute(source);
+    }
   }
 };
 export var getDirectory = function getDirectory(article) {
@@ -132,6 +137,23 @@ export var getDirectory = function getDirectory(article) {
       return section.filter(function (record) {
         return !record.hasParent;
       });
+    });
+
+    // 如果出现只有平级的分段
+    var backAllSection = _toConsumableArray(allSection);
+    allSection = [];
+    backAllSection.forEach(function (section) {
+      var isSideways = section.length > 1 && section.every(function (s) {
+        return s.type === section[0].type;
+      });
+      if (isSideways) {
+        var _allSection;
+        (_allSection = allSection).push.apply(_allSection, _toConsumableArray(section.map(function (s) {
+          return [s];
+        })));
+      } else {
+        allSection.push(section);
+      }
     });
 
     // 如果某一个 分段没有值，则 index 自增会出现序号错乱
