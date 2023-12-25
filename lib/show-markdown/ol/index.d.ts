@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import * as React from 'react';
 interface IProps {
-    children?: ReactNode;
-    idx?: number;
+    children?: React.ReactNode;
+    parentIdx?: number;
 }
 declare const Ol: React.NamedExoticComponent<IProps>;
 export default Ol;

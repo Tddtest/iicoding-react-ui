@@ -1,6 +1,6 @@
-import React, { ImgHTMLAttributes } from 'react';
-import './index.module.less';
-interface IProps extends ImgHTMLAttributes<HTMLImageElement> {
+import * as React from 'react';
+import './index.less';
+interface IProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     noBorder?: boolean;
     fallback?: HTMLImageElement['src'];
 }

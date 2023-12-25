@@ -3,7 +3,7 @@
  * @time: 2022/5/29
  * @func: pre 标签 外层样式
  **/
-import React, { memo } from 'react';
+import * as React from 'react';
 import "./index.less";
 var P = function P(props) {
   var children = props.children;
@@ -11,5 +11,5 @@ var P = function P(props) {
     className: "icd-pre"
   }, children);
 };
-var PreBlock = /*#__PURE__*/memo(P);
+var PreBlock = /*#__PURE__*/React.memo(P);
 export default PreBlock;

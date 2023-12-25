@@ -3,7 +3,7 @@
  * @time: 2022/5/28
  * @func: markdown 代码高亮
  **/
-import React from 'react';
+import * as React from 'react';
 import { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 import type { TPickPropsBySyntax } from './interface';
 interface IProps extends Partial<Pick<SyntaxHighlighterProps, TPickPropsBySyntax>> {

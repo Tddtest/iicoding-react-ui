@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import * as React from 'react';
 import "./index.less";
 var K = function K(props) {
   var children = props.children;
@@ -6,5 +6,5 @@ var K = function K(props) {
     className: "k"
   }, children);
 };
-var Kbd = /*#__PURE__*/memo(K);
+var Kbd = /*#__PURE__*/React.memo(K);
 export default Kbd;

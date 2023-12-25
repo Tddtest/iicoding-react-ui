@@ -13,16 +13,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @return:
  * @updateTime:
  **/
-import React, { Children, memo, isValidElement } from 'react';
-// import IICodingIcon from '@/components/Icon';
+import { Full23943367Full } from '@iicoding/react-icons';
 import { isString } from '@iicoding/utils';
+import * as React from 'react';
+import FullIconBackground from "../../full-icon-background";
+import { LINE_REPLACE_STR, PLACEHOLDER_REPLACE_STR } from "../../show-markdown/constants";
 import Tip from "../tip";
 import "./index.less";
 var P = function P(props) {
   var children = props.children,
     isBlockquote = props.isBlockquote;
   var isStrong = false;
-  Children.forEach(children, function (child) {
+  React.Children.forEach(children, function (child) {
     if (child) {
       Object.keys(child).forEach(function (key) {
         // @ts-expect-error
@@ -35,17 +37,23 @@ var P = function P(props) {
   if (isStrong && !isBlockquote) {
     return /*#__PURE__*/React.createElement("div", {
       className: "icd-note"
-    }, /*#__PURE__*/React.createElement("p", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "icd-tips"
-    }, /*#__PURE__*/React.createElement("span", null, "NOTE\uFF1A")), children);
+    }, /*#__PURE__*/React.createElement(FullIconBackground, {
+      style: {
+        fontSize: '32px',
+        marginTop: -3
+      },
+      icon: /*#__PURE__*/React.createElement(Full23943367Full, null)
+    }), /*#__PURE__*/React.createElement("span", null, "NOTE\uFF1A")), children);
   }
 
   // 处理换行
   if (Array.isArray(children) && children[0]) {
     var _children = _slicedToArray(children, 1),
       str = _children[0];
-    var noReplaceStr = "'iiCoding-a-b-c-d-e-f'";
-    var replaceStr = 'a-b-c-d-e-f-g-iiCoding';
+    var noReplaceStr = "'".concat(PLACEHOLDER_REPLACE_STR, "'");
+    var replaceStr = LINE_REPLACE_STR;
     if (isString(str)) {
       var lastChild = children.at(-1);
       var spliterator = ':::';
@@ -83,9 +91,9 @@ var P = function P(props) {
         } else if (lastChild.endsWith(spliterator)) {
           var len = children.length;
           return children.slice(1, len - 1).map(function (it) {
-            if ( /*#__PURE__*/isValidElement(it) && (it.type === 'em' ||
+            if ( /*#__PURE__*/React.isValidElement(it) && (it.type === 'em' ||
             // @ts-expect-error
-            _typeof(it.type) === 'object' && it.type.displayName === 'tip')) {
+            _typeof(it.type) === 'object' && it.type.displayName === 'em')) {
               var _type = str.split(spliterator)[1];
               return /*#__PURE__*/React.createElement(Tip, {
                 key: "".concat(_type, "-").concat(it),
@@ -110,7 +118,7 @@ var P = function P(props) {
           str = str.replaceAll('\n', replaceStr);
         }
         var child = str.split(replaceStr);
-        return /*#__PURE__*/React.createElement("p", {
+        return /*#__PURE__*/React.createElement("div", {
           className: "icd-p"
         }, child.map(function (str, idx) {
           return /*#__PURE__*/React.createElement("span", {
@@ -121,9 +129,9 @@ var P = function P(props) {
       }
     }
   }
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "icd-p"
   }, children);
 };
-var TagP = /*#__PURE__*/memo(P);
+var TagP = /*#__PURE__*/React.memo(P);
 export default TagP;

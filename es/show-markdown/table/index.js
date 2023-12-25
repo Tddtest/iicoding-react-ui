@@ -6,7 +6,7 @@
  * @return:
  * @updateTime:
  **/
-import React, { memo } from 'react';
+import * as React from 'react';
 import "./index.less";
 var T = function T(props) {
   var children = props.children;
@@ -16,5 +16,5 @@ var T = function T(props) {
     className: "icd-table"
   }, children));
 };
-var TagTable = /*#__PURE__*/memo(T);
+var TagTable = /*#__PURE__*/React.memo(T);
 export default TagTable;

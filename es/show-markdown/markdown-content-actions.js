@@ -8,10 +8,10 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+import { isObject, isString } from '@iicoding/utils';
 import { compiler } from 'markdown-to-jsx';
 import { nanoid } from 'nanoid';
-import { isObject, isString } from '@iicoding/utils';
-import { DIRECTORY_ID_SPLIT } from "../constants";
+import { DIRECTORY_ID_SPLIT } from "./constants";
 function executeSort(source, sortArr) {
   var lev = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
   source.forEach(function (under, index) {
@@ -64,12 +64,16 @@ var execute = function execute(source) {
     return !record.hasParent;
   });
   if (source.length > 1) {
-    execute(source);
+    var type = source[0].type;
+    if (source.some(function (s) {
+      return s.type !== type;
+    })) {
+      execute(source);
+    }
   }
 };
 export var getDirectory = function getDirectory(article) {
-  var content = article.content,
-    _id = article._id;
+  var content = article.content;
   var _ref = compiler(content, {
       slugify: function slugify(str) {
         return str;
@@ -135,6 +139,23 @@ export var getDirectory = function getDirectory(article) {
       });
     });
 
+    // 如果出现只有平级的分段
+    var backAllSection = _toConsumableArray(allSection);
+    allSection = [];
+    backAllSection.forEach(function (section) {
+      var isSideways = section.length > 1 && section.every(function (s) {
+        return s.type === section[0].type;
+      });
+      if (isSideways) {
+        var _allSection;
+        (_allSection = allSection).push.apply(_allSection, _toConsumableArray(section.map(function (s) {
+          return [s];
+        })));
+      } else {
+        allSection.push(section);
+      }
+    });
+
     // 如果某一个 分段没有值，则 index 自增会出现序号错乱
     var idx = 0;
     // 处理索引
@@ -145,8 +166,9 @@ export var getDirectory = function getDirectory(article) {
       return record;
     });
   }
-  localStorage.set(_id, result.map(function (record) {
+  localStorage.setItem(window.location.href, result.map(function (record) {
     return record.id;
   }).join(DIRECTORY_ID_SPLIT));
   return allSection.flat(1);
 };
+export default getDirectory;

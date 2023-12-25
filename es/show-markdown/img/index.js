@@ -7,11 +7,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @time: 2022/5/31
  * @func: markdown img 标签解析
  **/
-import React, { memo
-// useState
-} from 'react';
-import "./index.less";
+import * as React from 'react';
 import ImageIcd from "../../image-icd";
+import "./index.less";
 // import GlobalModal from '@/components/global-modal';
 
 var I = function I(props) {
@@ -47,5 +45,5 @@ var I = function I(props) {
     alt: alt
   }, other)));
 };
-var ImageTag = /*#__PURE__*/memo(I);
+var ImageTag = /*#__PURE__*/React.memo(I);
 export default ImageTag;

@@ -15,32 +15,104 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @return:
  * @updateTime:
  **/
-import React, { createElement, memo, useMemo } from 'react';
+import { Full202312179Full, Full23943115Full, Full23943118Full, Full23943258Full, Full23943308Full, FullIconCc22Full, FullIconCc42Full } from '@iicoding/react-icons';
 import classNames from 'classnames';
+import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { DIRECTORY_ID_SPLIT } from "../../constants";
+import FullIconBackground from "../../full-icon-background";
+import { DIRECTORY_ID_SPLIT } from "../constants";
 import "./index.less";
+var hIcon = [{
+  style: {
+    fontSize: 36,
+    margin: '-6px 10px 0 -3px'
+  },
+  icon: /*#__PURE__*/React.createElement(Full202312179Full, null)
+}, {
+  style: {
+    fontSize: 36,
+    margin: '-6px 10px 0 -5px'
+  },
+  icon: /*#__PURE__*/React.createElement(Full23943115Full, null),
+  bgStyle: {
+    zIndex: 0
+  }
+}, {
+  style: {
+    fontSize: 30,
+    marginTop: -6,
+    marginRight: 10
+  },
+  icon: /*#__PURE__*/React.createElement(FullIconCc42Full, null),
+  bgStyle: {
+    zIndex: 0
+  },
+  mode: 'double'
+}, {
+  style: {
+    fontSize: 24,
+    margin: '-6px 10px 0 3px'
+  },
+  icon: /*#__PURE__*/React.createElement(FullIconCc22Full, null),
+  mode: 'double',
+  bgStyle: {
+    zIndex: 0
+  }
+}, {
+  style: {
+    fontSize: 26,
+    marginTop: -6,
+    marginRight: 10
+  },
+  icon: /*#__PURE__*/React.createElement(Full23943118Full, null),
+  bgStyle: {
+    zIndex: 0
+  }
+}, {
+  style: {
+    fontSize: 24,
+    marginTop: -6,
+    marginRight: 10
+  },
+  icon: /*#__PURE__*/React.createElement(Full23943258Full, null),
+  bgStyle: {
+    zIndex: 0
+  }
+}, {
+  style: {
+    fontSize: 22,
+    marginTop: -2,
+    marginRight: 10
+  },
+  icon: /*#__PURE__*/React.createElement(Full23943308Full, null),
+  bgStyle: {
+    zIndex: 0
+  }
+}];
 var H = function H(props) {
   var children = props.children,
     level = props.level,
     other = _objectWithoutProperties(props, _excluded);
   var _useParams = useParams(),
     id = _useParams.id;
-  var tagProps = useMemo(function () {
+  var tagProps = React.useMemo(function () {
+    var key = window.location.href;
     // 这里的目的就是给标签注入id 注入的id来自于文章渲染之前 改造目录生成的id
-    var idStr = localStorage.getItem(id || '') || '';
+    var idStr = localStorage.getItem(key || '') || '';
     var idArr = idStr.split(DIRECTORY_ID_SPLIT);
     var newID = idArr.shift();
-    localStorage.setItem(id, idArr.join(DIRECTORY_ID_SPLIT));
+    localStorage.setItem(key, idArr.join(DIRECTORY_ID_SPLIT));
     return _objectSpread(_objectSpread({}, other), {}, {
       id: newID,
       className: classNames("icd-h".concat(level), 'data-target-title')
     });
   }, [id]);
-  var tagChildren = /*#__PURE__*/React.createElement("span", {
+  var tagChildren = /*#__PURE__*/React.createElement("div", {
+    className: "icd-title-box"
+  }, /*#__PURE__*/React.createElement(FullIconBackground, hIcon[level]), /*#__PURE__*/React.createElement("span", {
     className: "icd-title-text"
-  }, children);
-  return /*#__PURE__*/createElement("h".concat(level), tagProps, tagChildren);
+  }, children));
+  return /*#__PURE__*/React.createElement("h".concat(level), tagProps, tagChildren);
 };
-var TitleTag = /*#__PURE__*/memo(H);
+var TitleTag = /*#__PURE__*/React.memo(H);
 export default TitleTag;

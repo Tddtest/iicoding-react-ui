@@ -7,7 +7,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
  * @return:
  * @updateTime:
  **/
-import React, { memo, cloneElement } from 'react';
+import * as React from 'react';
 import "./index.less";
 var B = function B(props) {
   var children = props.children;
@@ -17,13 +17,12 @@ var B = function B(props) {
     return null;
   }
   return /*#__PURE__*/React.createElement("blockquote", {
-    className: "icd-blockquote"
+    className: 'icd-blockquote'
   }, _typeof(child) !== 'object' || typeof child !== 'function' ? child :
-  /*#__PURE__*/
   // @ts-expect-error
   cloneElement(children === null || children === void 0 ? void 0 : children[0], {
     isBlockquote: true
   }));
 };
-var TagBlockquote = /*#__PURE__*/memo(B);
+var TagBlockquote = /*#__PURE__*/React.memo(B);
 export default TagBlockquote;

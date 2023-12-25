@@ -7,7 +7,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @time: 2022/5/30
  * @func: 新标签中打开连接
  **/
-import React, { memo, Children, cloneElement } from 'react';
+import * as React from 'react';
 import "./index.less";
 var T = function T(props) {
   var children = props.children,
@@ -18,16 +18,16 @@ var T = function T(props) {
   }, /*#__PURE__*/React.createElement("a", _extends({
     target: href !== null && href !== void 0 && href.startsWith('#') ? '_self' : '_blank',
     href: href
-  }, other), Children.map(children, function (c) {
+  }, other), React.Children.map(children, function (c) {
     var _c$props, _c$props2;
     // @ts-expect-error
     if (c !== null && c !== void 0 && (_c$props = c.props) !== null && _c$props !== void 0 && _c$props.src && c !== null && c !== void 0 && (_c$props2 = c.props) !== null && _c$props2 !== void 0 && _c$props2.alt) {
-      return /*#__PURE__*/cloneElement(c, {
+      return /*#__PURE__*/React.cloneElement(c, {
         isAnchor: true
       });
     }
     return c;
   })));
 };
-var TargetOpen = /*#__PURE__*/memo(T);
+var TargetOpen = /*#__PURE__*/React.memo(T);
 export default TargetOpen;

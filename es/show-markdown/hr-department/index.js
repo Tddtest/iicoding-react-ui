@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import * as React from 'react';
 import "./index.scss";
 var departmentType = {
   fade: 'fade',
@@ -28,5 +28,5 @@ var H = function H(props) {
     className: type
   }));
 };
-var HrDepartment = /*#__PURE__*/memo(H);
+var HrDepartment = /*#__PURE__*/React.memo(H);
 export default HrDepartment;

@@ -1,7 +1,9 @@
-import React, { ReactNode } from 'react';
+import * as React from 'react';
 interface IProps {
-    children?: ReactNode;
-    idx?: number;
+    children?: React.ReactNode;
+    parentIdx?: number;
+    selfIdx?: number;
+    isOl?: boolean;
 }
 declare const Li: React.NamedExoticComponent<IProps>;
 export default Li;

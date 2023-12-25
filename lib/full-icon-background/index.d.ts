@@ -1,13 +1,13 @@
-import React, { ReactNode, CSSProperties } from 'react';
-import './index.module.less';
+import * as React from 'react';
+import './index.less';
 export type IconBgMode = 'background' | 'double' | 'color';
-interface IProps {
-    icon: any | ReactNode;
-    bgColor?: CSSProperties['color'];
-    style?: CSSProperties;
+export interface FullIconBackgroundProps {
+    icon: any | React.ReactNode;
+    bgColor?: React.CSSProperties['color'];
+    style?: React.CSSProperties;
     mode?: IconBgMode;
-    bgStyle?: CSSProperties;
-    ffStyle?: CSSProperties;
+    bgStyle?: React.CSSProperties;
+    ffStyle?: React.CSSProperties;
 }
-declare const FillIconBg: React.NamedExoticComponent<IProps>;
-export default FillIconBg;
+declare const FullIconBackground: React.NamedExoticComponent<FullIconBackgroundProps>;
+export default FullIconBackground;

@@ -7,22 +7,23 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @time: 2022/5/28
  * @func: markdown 代码高亮
  **/
-import React, { memo } from 'react';
+import * as React from 'react';
 import { PrismLight } from 'react-syntax-highlighter';
-import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
-import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
-import less from 'react-syntax-highlighter/dist/cjs/languages/prism/less';
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
-import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
-import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
-import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown';
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
+import less from 'react-syntax-highlighter/dist/cjs/languages/prism/less';
+import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown';
+import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
 PrismLight.registerLanguage('tsx', tsx);
 PrismLight.registerLanguage('scss', scss);
 PrismLight.registerLanguage('less', less);
 PrismLight.registerLanguage('bash', bash);
 PrismLight.registerLanguage('json', json);
+// PrismLight.registerLanguage('mermaid', mermaid);
 PrismLight.registerLanguage('markdown', markdown);
 PrismLight.registerLanguage('javascript', javascript);
 PrismLight.registerLanguage('typescript', typescript);
@@ -34,5 +35,5 @@ var C = function C(props) {
     style: dracula
   }, other), children);
 };
-var CodeBlockHighlight = /*#__PURE__*/memo(C);
+var CodeBlockHighlight = /*#__PURE__*/React.memo(C);
 export default CodeBlockHighlight;

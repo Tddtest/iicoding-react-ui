@@ -13,23 +13,27 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
  * @return:
  * @updateTime:
  **/
-import React, { memo } from 'react';
 import Markdown from 'markdown-to-jsx';
-import HrDepartment from "./hr-department";
-import TitleTag from "./h-title";
-import CodeBlock from "./code";
-import PreBlock from "./pre";
-import TargetOpen from "./taget-open";
-import ImageTag from "./img";
-import TagP from "./p";
+import * as React from 'react';
 import TagBlockquote from "./blockquote";
-import TagTable from "./table";
+import CodeBlock from "./code";
+import Del from "./del";
+import Em from "./em";
+import TitleTag from "./h-title";
+import HrDepartment from "./hr-department";
+import ImageTag from "./img";
+import Input from "./input";
 import Kbd from "./kbd";
-// import Em from './tip';
-
-// import Ol from './ol';
-// import Li from './li';
-
+import Li from "./li";
+import Mark from "./mark";
+import Ol from "./ol";
+import TagP from "./p";
+import PreBlock from "./pre";
+import Sub from "./sub";
+import Sup from "./sup";
+import TagTable from "./table";
+import TargetOpen from "./taget-open";
+import Ul from "./ul";
 export * from "./markdown-content-actions";
 import "./index.less";
 var getTitleTag = function getTitleTag(level) {
@@ -42,15 +46,74 @@ var getTitleTag = function getTitleTag(level) {
 };
 var S = function S(props) {
   var mdContent = props.mdContent,
-    options = props.options,
-    overrides = props.overrides;
-  return /*#__PURE__*/React.createElement(Markdown, {
+    options = props.options;
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 0 0",
+    style: {
+      position: 'absolute',
+      zIndex: -1,
+      opacity: 0
+    }
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "boxGradient",
+    gradientUnits: "userSpaceOnUse",
+    x1: "0",
+    y1: "0",
+    x2: "25",
+    y2: "25"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#27FDC7"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#0FC0F5"
+  })), /*#__PURE__*/React.createElement("linearGradient", {
+    id: "lineGradient"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0%",
+    stopColor: "#27FDC7"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "100%",
+    stopColor: "#c827fd",
+    strokeLinejoin: "round",
+    strokeLinecap: "round"
+  })), /*#__PURE__*/React.createElement("path", {
+    id: "icd-line",
+    stroke: "url(#lineGradient)",
+    d: "M21 12.3h168v0.1z"
+  }), /*#__PURE__*/React.createElement("path", {
+    id: "icd-box",
+    stroke: "url(#boxGradient)",
+    d: "M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"
+  }), /*#__PURE__*/React.createElement("path", {
+    id: "icd-check",
+    stroke: "url(#boxGradient)",
+    d: "M10 13l2 2 5-5"
+  }), /*#__PURE__*/React.createElement("circle", {
+    id: "icd-circle",
+    cx: "13.5",
+    cy: "12.5",
+    r: "10"
+  }))), /*#__PURE__*/React.createElement(Markdown, {
     className: "show-markdown",
-    options: _objectSpread(_objectSpread({}, options), {}, {
+    options: _objectSpread(_objectSpread({
       slugify: function slugify(str) {
         return str;
-      },
+      }
+    }, options), {}, {
       overrides: _objectSpread({
+        hr: {
+          component: HrDepartment,
+          props: {
+            type: 'bookends'
+          }
+        },
+        img: {
+          component: ImageTag,
+          props: {
+            alt: 'icd-img'
+          }
+        },
         h1: {
           component: getTitleTag(1)
         },
@@ -69,8 +132,14 @@ var S = function S(props) {
         h6: {
           component: getTitleTag(6)
         },
+        blockquote: {
+          component: TagBlockquote
+        },
         code: {
           component: CodeBlock
+        },
+        table: {
+          component: TagTable
         },
         pre: {
           component: PreBlock
@@ -78,33 +147,42 @@ var S = function S(props) {
         a: {
           component: TargetOpen
         },
+        kbd: {
+          component: Kbd
+        },
+        del: {
+          component: Del
+        },
         p: {
           component: TagP
         },
-        hr: {
-          component: HrDepartment,
-          props: {
-            type: 'bookends'
-          }
+        em: {
+          component: Em
         },
-        blockquote: {
-          component: TagBlockquote
+        ul: {
+          component: Ul
         },
-        table: {
-          component: TagTable
+        ol: {
+          component: Ol
         },
-        img: {
-          component: ImageTag,
-          props: {
-            alt: 'icd-img'
-          }
+        li: {
+          component: Li
         },
-        kbd: {
-          component: Kbd
+        input: {
+          component: Input
+        },
+        sup: {
+          component: Sup
+        },
+        sub: {
+          component: Sub
+        },
+        mark: {
+          component: Mark
         }
-      }, overrides)
+      }, options === null || options === void 0 ? void 0 : options.overrides)
     })
-  }, mdContent);
+  }, mdContent));
 };
-var ShowMarkdown = /*#__PURE__*/memo(S);
+export var ShowMarkdown = /*#__PURE__*/React.memo(S);
 export default ShowMarkdown;
