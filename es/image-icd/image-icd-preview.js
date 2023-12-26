@@ -25,8 +25,11 @@ var I = function I(props) {
     setActIdx = _React$useState6[1];
   var containerRef = React.useRef(null);
   var onImageClick = function onImageClick(idx) {
-    setOpen(true);
-    setActIdx(idx);
+    // 如果这一项目存在，则打开并设置
+    if (images[idx]) {
+      setOpen(true);
+      setActIdx(idx);
+    }
   };
   React.useEffect(function () {
     if (containerRef.current) {
