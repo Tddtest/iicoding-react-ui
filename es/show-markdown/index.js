@@ -34,10 +34,6 @@ import Sup from "./sup";
 import TagTable from "./table";
 import TargetOpen from "./taget-open";
 import Ul from "./ul";
-import Input from "./input";
-import Sup from "./sup";
-import Sub from "./sub";
-import Mark from "./mark";
 export * from "./markdown-content-actions";
 import "./index.less";
 var getTitleTag = function getTitleTag(level) {

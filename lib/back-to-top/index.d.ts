@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './index.css';
+import './index.less';
 interface IProps {
     textStyle?: React.CSSProperties;
     lineStyle?: React.CSSProperties;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./index.css";
+import "./index.less";
 var B = function B(props) {
   var textStyle = props.textStyle,
     lineStyle = props.lineStyle,
