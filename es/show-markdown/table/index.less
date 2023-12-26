@@ -13,13 +13,21 @@
     th {
       text-align: left;
       background-color: rgb(255 255 255 / 20%);
+
+      &:first-child {
+        border-top-left-radius: 12px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 12px;
+      }
     }
 
     tr,
     td,
     th {
       padding: 0 20px;
-      border: 1px solid #e5ecef;
+      border: 1px solid transparent;
     }
 
     tr {

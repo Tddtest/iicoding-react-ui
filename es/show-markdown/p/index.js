@@ -17,8 +17,8 @@ import { Full23943367Full } from '@iicoding/react-icons';
 import { isString } from '@iicoding/utils';
 import * as React from 'react';
 import FullIconBackground from "../../full-icon-background";
-import Tip from "../tip";
 import { LINE_REPLACE_STR, PLACEHOLDER_REPLACE_STR } from "../../show-markdown/constants";
+import Tip from "../tip";
 import "./index.less";
 var P = function P(props) {
   var children = props.children,

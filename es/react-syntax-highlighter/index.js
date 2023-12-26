@@ -18,11 +18,14 @@ import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
 import dracula from 'react-syntax-highlighter/dist/esm/styles/prism/dracula';
+// import materialDark from 'react-syntax-highlighter/dist/esm/styles/prism/material-dark';
+
 PrismLight.registerLanguage('tsx', tsx);
 PrismLight.registerLanguage('scss', scss);
 PrismLight.registerLanguage('less', less);
 PrismLight.registerLanguage('bash', bash);
 PrismLight.registerLanguage('json', json);
+// PrismLight.registerLanguage('mermaid', mermaid);
 PrismLight.registerLanguage('markdown', markdown);
 PrismLight.registerLanguage('javascript', javascript);
 PrismLight.registerLanguage('typescript', typescript);

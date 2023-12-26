@@ -30,6 +30,10 @@ import PreBlock from "./pre";
 import TagTable from "./table";
 import TargetOpen from "./taget-open";
 import Ul from "./ul";
+import Input from "./input";
+import Sup from "./sup";
+import Sub from "./sub";
+import Mark from "./mark";
 export * from "./markdown-content-actions";
 import "./index.less";
 var getTitleTag = function getTitleTag(level) {
@@ -163,6 +167,18 @@ var S = function S(props) {
         },
         li: {
           component: Li
+        },
+        input: {
+          component: Input
+        },
+        sup: {
+          component: Sup
+        },
+        sub: {
+          component: Sub
+        },
+        mark: {
+          component: Mark
         }
       }, options === null || options === void 0 ? void 0 : options.overrides)
     })

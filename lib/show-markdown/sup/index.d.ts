@@ -3,5 +3,5 @@ import './index.less';
 interface IProps {
     children: React.ReactNode;
 }
-declare const ScreenBar: React.NamedExoticComponent<IProps>;
-export default ScreenBar;
+declare const Sup: React.NamedExoticComponent<IProps>;
+export default Sup;
