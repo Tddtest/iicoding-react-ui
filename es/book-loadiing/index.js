@@ -1,4 +1,4 @@
-var _excluded = ["bgColor", "pageSize"];
+var _excluded = ["bgColor", "pageSize", "maskStyle"];
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -31,7 +31,8 @@ var getBookStyle = function getBookStyle(options) {
 var B = function B(props) {
   var bgColor = props.bgColor,
     _props$pageSize = props.pageSize,
-    pageSize = _props$pageSize === void 0 ? 16 : _props$pageSize,
+    pageSize = _props$pageSize === void 0 ? 6 : _props$pageSize,
+    maskStyle = props.maskStyle,
     other = _objectWithoutProperties(props, _excluded);
   var _React$useState = React.useState(function () {
       return getBookStyle(props);
@@ -57,9 +58,11 @@ var B = function B(props) {
   React.useEffect(function () {
     setStyleVal(getBookStyle(props));
   }, [bgColor === null || bgColor === void 0 ? void 0 : bgColor.start, bgColor === null || bgColor === void 0 ? void 0 : bgColor.end, pageSize, other === null || other === void 0 ? void 0 : other.pageColor, other === null || other === void 0 ? void 0 : other.duration, other === null || other === void 0 ? void 0 : other.shadowColor, other === null || other === void 0 ? void 0 : other.textColor, other === null || other === void 0 ? void 0 : other.pageFoldColor]);
-  console.log(pageNode);
   return /*#__PURE__*/React.createElement("div", {
-    className: "icd-book-loading"
+    className: "icd-book-loading",
+    style: Object.assign(maskStyle || {}, other.maskBgColor ? {
+      backgroundColor: other.maskBgColor
+    } : {})
   }, /*#__PURE__*/React.createElement("div", {
     className: "icd-load-box"
   }, /*#__PURE__*/React.createElement("div", {
@@ -67,7 +70,7 @@ var B = function B(props) {
     style: styleVal
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", null, pageNode))), /*#__PURE__*/React.createElement("div", {
     className: "load-text"
-  }, "Loading...")));
+  }, (other === null || other === void 0 ? void 0 : other.text) || 'Loading...')));
 };
 var BookLoading = /*#__PURE__*/React.memo(B);
 export default BookLoading;
