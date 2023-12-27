@@ -1,0 +1,198 @@
+.icd-book-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: saturate(2) blur(180px);
+
+  .load-text {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .icd-load-box {
+    width: 200px;
+    height: 186px;
+
+    .load-text {
+      height: 20px;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  .loader {
+    --size: 6;
+    //--background: linear-gradient(135deg, #45c4f9, #ff0be5);
+    //--shadow: rgba(39, 94, 254, 0.28);
+    //--text: #6C7486;
+    //--page: rgba(255, 255, 255, 0.36);
+    //--page-fold: rgba(255, 255, 255, 0.52);
+    //--duration: 3s;
+    width: 100%;
+    height: calc(100% - 46px);
+    position: relative;
+  }
+
+  .loader:before, .loader:after {
+    --r: -6deg;
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 120px;
+    top: 80%;
+    box-shadow: 0 16px 12px var(--shadow);
+    transform: rotate(var(--r));
+  }
+
+  .loader:before {
+    left: 4px;
+  }
+
+  .loader:after {
+    --r: 6deg;
+    right: 4px;
+  }
+
+  .loader div {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    position: relative;
+    z-index: 1;
+    perspective: 600px;
+    box-shadow: 0 4px 6px var(--shadow);
+    background-image: var(--background);
+  }
+
+  .loader div ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  .loader div ul li {
+    --r: 180deg;
+    --o: 0;
+    --c: var(--page);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform-origin: 100% 50%;
+    color: var(--c);
+    opacity: var(--o);
+    transform: rotateY(var(--r));
+    animation: var(--duration) ease infinite;
+  }
+
+  .loader div ul li:first-child {
+    --r: 0deg;
+    --o: 1;
+  }
+
+  @count: 1;
+  @num: 6;
+
+  .loopPage(@count) when (@count < @num) {
+    .loader div ul li:nth-child(@{count}) {
+      --c: var(--page-fold);
+      animation-name: e("page-@{count}");
+    }
+    .loopPage((@count  +  1));
+  };
+
+  @size: var(--size);
+
+  .loopPage(@count);
+
+  .loader div ul li:last-child {
+    --o: 1;
+  }
+
+  .loader div ul li svg {
+    width: 90px;
+    height: 120px;
+    display: block;
+  }
+
+  .loader span {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text);
+  }
+
+  @i: 2;
+
+  .loopKeyframes(@i) when (@i < @num) {
+    @delay: @i * 15 - 30;
+    @delay20: @delay + 20;
+    @delay35: @delay + 35;
+    @delay50: @delay + 50;
+    @keyframesName: e("page-@{i}");
+    @s0: e('@{delay}%');
+    @s20: e('@{delay20}%');
+    @s35: e('@{delay35}%');
+    @s50: e('@{delay50}%');
+
+
+    @keyframes @keyframesName {
+      @{s0} {
+        transform: rotateY(180deg);
+        opacity: 0;
+      }
+
+      @{s20} {
+        opacity: 1;
+      }
+
+      @{s35}, 100% {
+        opacity: 0;
+      }
+
+      @{s50}, 100% {
+        transform: rotateY(0deg);
+      }
+    }
+
+    .loopKeyframes(@i + 1);
+  }
+
+  .loopKeyframes(@i);
+}
+
+//@keyframes firework {
+//  .circleBig(10, 11);
+//
+//  .circleBig(@m: 10, @n: 11, @i:0, @j:0) when (@i < @m) and (@j < @n) { // j、n 为个位数，i、m 为十位数
+//    @tmp1: @m * @n; // 宽高乘积
+//    @tmp2: @i * @m + @j; // 当前进度
+//    @x: round(@tmp2 / @tmp1 * 100, 2); // 进度
+//    @selector: e('@{x}%');
+//    @tmp3: @j * -100;
+//    @tmp4: @i * -100;
+//    @left: e('@{tmp3}%');
+//    @right: e('@{tmp4}%');
+//    @jPlus: @j + 1;
+//    @iPlus: @i + 1;
+//
+//    @{selector} {
+//      background-position: @left @right;
+//    }
+//
+//    & when (@jPlus >= @n) {
+//      .circleBig(@m, @n, @iPlus, 0);
+//    }
+//
+//    & when (@jPlus < @n) {
+//      .circleBig(@m, @n, @i, @jPlus);
+//    }
+//  }
+//}

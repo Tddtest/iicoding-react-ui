@@ -6,8 +6,12 @@
  * @return:
  * @updateTime:
  **/
-import { IconComp2Shadow } from '@iicoding/react-icons';
 import * as React from 'react';
+import { IconComp2Shadow
+// IconComp75Shadow,
+// IconComp51Shadow,
+// SingleImgShadow,
+} from '@iicoding/react-icons';
 // import dom2img from 'dom-to-image';
 import { copy } from '@iicoding/utils';
 import CodeBlockHighlight from "../../react-syntax-highlighter";
