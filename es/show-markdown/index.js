@@ -47,7 +47,11 @@ var getTitleTag = function getTitleTag(level) {
 var S = function S(props) {
   var mdContent = props.mdContent,
     options = props.options;
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("svg", {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 0 0",
     style: {
       position: 'absolute',
