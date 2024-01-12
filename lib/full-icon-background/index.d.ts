@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './index.less';
 export type IconBgMode = 'background' | 'double' | 'color';
-export interface FullIconBackgroundProps {
+export interface FullIconBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
     icon: any | React.ReactNode;
     bgColor?: React.CSSProperties['color'];
     style?: React.CSSProperties;
