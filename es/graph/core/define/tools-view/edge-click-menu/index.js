@@ -22,7 +22,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
  * @return:
  * @updateTime:
  **/
-import React, { ToolsView } from '@antv/x6';
+import React from 'react';
+import { ToolsView } from '@antv/x6';
 import ReactDOM from 'react-dom/client';
 import Menu from "./menu";
 var EdgeClickMenu = /*#__PURE__*/function (_ToolsView$ToolItem) {

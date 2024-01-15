@@ -10,3 +10,6 @@ export { default as CodeBlockHighlight } from "./react-syntax-highlighter";
 export { default as ShowMarkdown } from "./show-markdown";
 export { default as getDirectory } from "./show-markdown/markdown-content-actions";
 export { default as GlassBox } from "./glass-box";
+export { default as GraphCanvas } from "./graph/canvas";
+export * from "./graph/core";
+export * from "./ant-utils";

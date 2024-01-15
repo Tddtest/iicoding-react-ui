@@ -24,7 +24,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { memo, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import DropdownDefineUI from "../../../../../dropdown-define-ui";
-import { utils } from "../../../../../ant-utils";
+import { utils } from "../../../../..";
 import { changeNodeData } from "../../../helper/func";
 import NodeConfigModal from "./node-config-modal";
 import GlassBoxWrap from "../components/glass-box-wrap";
