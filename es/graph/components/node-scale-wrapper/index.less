@@ -1,0 +1,170 @@
+.nsw {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .modalBox(@opacity: 0.2, @rowSize: 20px, @columnSize: 80px) {
+    background-color: rgba(255, 255, 255, @opacity);
+    backdrop-filter: saturate(2) blur(20px);
+    box-shadow: rgba(24, 32, 79, 0.25) 0 @rowSize @columnSize;
+    border-radius: 8px;
+  }
+
+  .resize {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &.show {
+      z-index: 1;
+    }
+
+    .dw {
+      @color: hotpink;
+      @dwOffset: -10px;
+
+      position: relative;
+      top: @dwOffset;
+      left: @dwOffset;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      border: 2px dashed transparent;
+      border-radius: 4px;
+      transition: border-color 0.2s ease-in;
+
+      &.show {
+        border-color: fade(@color, 35);
+      }
+
+      @dotRadius: 10px;
+      @dotExpand: 8px;
+      @offset: -6px;
+      @offsetExpand: -10px;
+
+      .dot {
+        position: absolute;
+        width: @dotRadius;
+        height: @dotRadius;
+        border-radius: 50%;
+        cursor: cell;
+        opacity: 0;
+        .modalBox(0.8);
+        border: 1px solid @color;
+        box-shadow: @color 0 0 14px;
+        transition-property: opacity, width, height, top, left, right, bottom;
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+        z-index: 10;
+
+        &.show {
+          opacity: 1;
+        }
+
+        &:hover {
+          width: calc(@dotRadius + @dotExpand);
+          height: calc(@dotRadius + @dotExpand);
+        }
+
+        &.tl {
+          top: @offset;
+          left: @offset;
+          cursor: nw-resize;
+
+          &:hover {
+            top: @offsetExpand;
+            left: @offsetExpand;
+          }
+        }
+
+        &.tc {
+          top: @offset;
+          left: calc(50% + @offset);
+          cursor: n-resize;
+
+          &:hover {
+            top: @offsetExpand;
+            left: calc(50% + @offsetExpand);
+          }
+        }
+
+        &.tr {
+          top: @offset;
+          right: @offset;
+          cursor: ne-resize;
+
+          &:hover {
+            top: @offsetExpand;
+            right: @offsetExpand;
+          }
+        }
+
+        &.rc {
+          top: calc(50% + @offset);
+          right: @offset;
+          cursor: e-resize;
+
+          &:hover {
+            top: calc(50% + @offsetExpand);
+            right: @offsetExpand;
+          }
+        }
+
+        &.br {
+          top: calc(100% + @offset + 1px);
+          right: @offset;
+          cursor: se-resize;
+
+          &:hover {
+            top: calc(100% + @offsetExpand);
+            right: @offsetExpand;
+          }
+        }
+
+        &.bc {
+          top: calc(100% + @offset + 2px);
+          left: calc(50% + @offset);
+          cursor: s-resize;
+
+          &:hover {
+            top: calc(100% + @offsetExpand + 2px);
+            left: calc(50% + @offsetExpand + 2px);
+          }
+        }
+
+        &.bl {
+          top: calc(100% + @offset + 1px);
+          left: @offset;
+          cursor: sw-resize;
+
+          &:hover {
+            top: calc(100% + @offsetExpand);
+            left: @offsetExpand;
+          }
+        }
+
+        &.lc {
+          top: calc(50% + @offset);
+          left: @offset;
+          cursor: w-resize;
+
+          &:hover {
+            top: calc(50% + @offsetExpand);
+            left: @offsetExpand;
+          }
+        }
+      }
+    }
+  }
+
+  .c {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+
+.x6-widget-transform {
+  // opacity: 0;
+}

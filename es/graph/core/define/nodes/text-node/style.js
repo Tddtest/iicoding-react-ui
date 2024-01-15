@@ -1,0 +1,11 @@
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+import styled from '@emotion/styled';
+export var NodeContent = styled.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  height: 100%;\n  box-shadow: rgba(24, 32, 79, 0.25) 0 4px 80px;\n  background-color: rgba(255, 255, 255, 0.2);\n  // backdrop-filter: saturate(1) blur(200px);\n  border-radius: 8px;\n  // padding: 10px;\n  // overflow: hidden;\n"])));
+export var Content = styled.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  // flex: 1;\n  line-height: 1.5;\n"])));
+export var Icon = styled.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  .icd-run-failed {\n    svg > path {\n      &:nth-child(2) {\n        fill: rgba(232, 65, 110, 0.8);\n      }\n    }\n  }\n"])));
+export var ContentBox = styled.div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0 10px;\n  width: 100%;\n  height: 100%;\n  padding: 0 10px;\n  user-select: none;\n"])));
+export var EditContentBox = styled.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 10px;\n  left: 10px;\n  box-sizing: border-box;\n  display: ", ";\n  justify-content: center;\n  align-items: center;\n  width: calc(100% - 20px);\n  height: calc(100% - 20px);\n  z-index: 0;\n"])), function (props) {
+  return props.show ? 'flex' : 'none';
+});
+export var EditContent = styled.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  width: 100%;\n  min-height: 20px;\n  text-align: center;\n  user-select: none;\n  cursor: text;\n  line-height: 1.5;\n\n  &:focus {\n    outline: none;\n  }\n"])));
