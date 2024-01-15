@@ -18,8 +18,15 @@ var X6Graph = /*#__PURE__*/_createClass(function X6Graph() {
   _defineProperty(this, "graph", void 0);
   _defineProperty(this, "init", function (options) {
     if (!_this.graph) {
-      _this.graph = new Graph(_objectSpread(_objectSpread({}, flowOptions), options));
+      var opt = _objectSpread(_objectSpread({}, flowOptions), options);
+      _this.graph = new Graph(opt);
       _this.register();
+      if (opt.disabledScroll) {
+        _this.graph.lockScroller();
+      }
+      if (opt.disabledCV) {
+        _this.graph.toggleClipboard(false);
+      }
     }
   });
   // @ts-ignore
