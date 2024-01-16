@@ -169,6 +169,11 @@ export var getDirectory = function getDirectory(article) {
   localStorage.setItem(window.location.href, result.map(function (record) {
     return record.id;
   }).join(DIRECTORY_ID_SPLIT));
+
+  // 设置一个备份的，如果组件拿不到，就获取备份的
+  localStorage.setItem("bk-".concat(window.location.href), result.map(function (record) {
+    return record.id;
+  }).join(DIRECTORY_ID_SPLIT));
   return allSection.flat(1);
 };
 export default getDirectory;

@@ -99,11 +99,11 @@ var H = function H(props) {
     var key = window.location.href;
     // 这里的目的就是给标签注入id 注入的id来自于文章渲染之前 改造目录生成的id
     var idStr = localStorage.getItem(key || '') || '';
+    if (!idStr) {
+      idStr = localStorage.getItem("bk-".concat(key)) || '';
+    }
     var idArr = idStr.split(DIRECTORY_ID_SPLIT);
-    console.log('idStr----', idStr);
-    console.log('idArr----', idArr);
     var newID = idArr.shift();
-    console.log('newID----', newID);
     localStorage.setItem(key, idArr.join(DIRECTORY_ID_SPLIT));
     return _objectSpread(_objectSpread({}, other), {}, {
       id: newID,
