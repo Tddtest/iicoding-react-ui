@@ -6,8 +6,8 @@
  * @return:
  * @updateTime:
  **/
-import React from 'react';
 import { Edge, Graph } from '@antv/x6';
+import React from 'react';
 import './index.less';
 type TFn = (...args: any[]) => any;
 interface IProps {

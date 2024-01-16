@@ -1,6 +1,6 @@
+import { Full23943084Full, Full23943134Full, Full23943173Full, FulldebugFull, FullIconCc35Full, FullStartFull, FullStartThatFull } from '@iicoding/react-icons';
 import React from 'react';
 import { FullIconBackground } from "../../../../../";
-import { Full23943084Full, Full23943134Full, Full23943173Full, FulldebugFull, FullIconCc35Full, FullStartFull, FullStartThatFull } from '@iicoding/react-icons';
 export var MENU_ITEM_CONFIG = [{
   title: '删除节点',
   key: 'del',

@@ -3,7 +3,7 @@
  * @time: 2022/03/09
  * @func: 自定义边的方式
  * */
-import { Graph, Path, Line, Curve } from '@antv/x6';
+import { Curve, Graph, Line, Path } from '@antv/x6';
 Graph.registerConnector('iiCoding', function (s, e) {
   var offset = 4;
   var deltaY = Math.abs(e.y - s.y);

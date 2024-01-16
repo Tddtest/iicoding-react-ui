@@ -14,12 +14,12 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+import { Full1704531Full, Full23943084Full, Full23943173Full } from '@iicoding/react-icons';
+import { Checkbox, Modal } from 'antd';
+import classNames from 'classnames';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { FullIconBackground } from "../../../../../../";
-import { Full23943173Full, Full23943084Full, Full1704531Full } from '@iicoding/react-icons';
-import { Modal, Checkbox } from 'antd';
 import IcdMonacoEditor from "../../../../../../monaco-editor";
-import classNames from 'classnames';
 import "./index.less";
 var N = function N(props) {
   var _node$data3;

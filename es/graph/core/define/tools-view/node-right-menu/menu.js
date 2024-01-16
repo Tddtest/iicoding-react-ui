@@ -21,15 +21,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @return:
  * @updateTime:
  **/
-import React, { memo, useState, useEffect } from 'react';
 import classNames from 'classnames';
-import DropdownDefineUI from "../../../../../dropdown-define-ui";
+import React, { memo, useEffect, useState } from 'react';
 import { utils } from "../../../../..";
+import DropdownDefineUI from "../../../../../dropdown-define-ui";
+import { handleExecuteFlowAtThatNode, handleExecuteFlowFromThatNode, handleStartExecuteFlow, validateFlowNodes } from "../../../helper";
 import { changeNodeData } from "../../../helper/func";
-import NodeConfigModal from "./node-config-modal";
 import GlassBoxWrap from "../components/glass-box-wrap";
-import { handleExecuteFlowFromThatNode, handleExecuteFlowAtThatNode, handleStartExecuteFlow, validateFlowNodes } from "../../../helper";
 import { MENU_ITEM_CONFIG } from "./menu-item";
+import NodeConfigModal from "./node-config-modal";
 import "./index.less";
 var getTitle = function getTitle(menu, isDebug) {
   var title = menu.title;

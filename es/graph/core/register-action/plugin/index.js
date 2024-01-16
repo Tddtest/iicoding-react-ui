@@ -7,13 +7,14 @@
  * @updateTime:
  **/
 import { Export } from '@antv/x6-plugin-export';
-import { Selection } from '@antv/x6-plugin-selection';
 import { History } from '@antv/x6-plugin-history';
+import { Selection } from '@antv/x6-plugin-selection';
 // import { Keyboard } from '@antv/x6-plugin-keyboard';
+
 import { Clipboard } from '@antv/x6-plugin-clipboard';
+import { Scroller } from '@antv/x6-plugin-scroller';
 import { Snapline } from '@antv/x6-plugin-snapline';
 import { Transform } from '@antv/x6-plugin-transform';
-import { Scroller } from '@antv/x6-plugin-scroller';
 var registerPlugin = function registerPlugin(graph) {
   // 对齐
   graph.use(new Snapline({

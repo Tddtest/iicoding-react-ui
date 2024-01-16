@@ -5,7 +5,7 @@ function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key i
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 import { isNumber } from '@iicoding/utils';
-import { setEdgeRunningAttrs, setEdgeWaitingAttrs, setEdgeInitAttrs } from "./helper";
+import { setEdgeInitAttrs, setEdgeRunningAttrs, setEdgeWaitingAttrs } from "./helper";
 var registerEdgeEvents = function registerEdgeEvents(graph) {
   graph.on('edge:selected', function (_ref) {
     var edge = _ref.edge;

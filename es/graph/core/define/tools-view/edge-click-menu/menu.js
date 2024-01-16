@@ -18,13 +18,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @return:
  * @updateTime:
  **/
-import React, { memo, useState, useRef } from 'react';
-import { ColorPicker, Tooltip } from 'antd';
-import DropdownDefineUI from "../../../../../dropdown-define-ui";
+
 import { RefreshShadow } from '@iicoding/react-icons';
+import { ColorPicker, Tooltip } from 'antd';
 import classNames from 'classnames';
-import { COLORS } from "../constants";
+import React, { memo, useRef, useState } from 'react';
+import DropdownDefineUI from "../../../../../dropdown-define-ui";
 import GlassBoxWrap from "../components/glass-box-wrap";
+import { COLORS } from "../constants";
 import "./index.less";
 var N = function N(props) {
   var pos = props.pos,

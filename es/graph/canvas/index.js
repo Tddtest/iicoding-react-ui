@@ -1,5 +1,5 @@
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-var _excluded = ["graphId", "data", "loading", "graphOptions"];
+var _excluded = ["graphId", "data", "onGraphRenderDataBefore", "onGraphMounted", "loading", "graphOptions"];
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -13,14 +13,16 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-import React, { memo, useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { SingleLoading } from "../../";
 import useGraph from "../core/use-graph";
 import "./index.less";
 var G = function G(props) {
   var graphId = props.graphId,
     data = props.data,
+    onGraphRenderDataBefore = props.onGraphRenderDataBefore,
+    onGraphMounted = props.onGraphMounted,
     loading = props.loading,
     graphOptions = props.graphOptions,
     other = _objectWithoutProperties(props, _excluded);
@@ -43,6 +45,8 @@ var G = function G(props) {
       // 渲染之前，先清空数据
       // canvas.canvas?.clearCells();
 
+      // 渲染数据之前
+      onGraphRenderDataBefore === null || onGraphRenderDataBefore === void 0 || onGraphRenderDataBefore(graph.graph);
       // 渲染元素
       graph.rerender(data); // 渲染元素
       (_graph$graph = graph.graph) === null || _graph$graph === void 0 || _graph$graph.on('node:change:data', function (_ref) {
@@ -51,6 +55,9 @@ var G = function G(props) {
           setShowBg(true);
         }
       });
+
+      // 渲染数据之后
+      onGraphMounted === null || onGraphMounted === void 0 || onGraphMounted(graph.graph);
     }
   }, [data]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SingleLoading, {

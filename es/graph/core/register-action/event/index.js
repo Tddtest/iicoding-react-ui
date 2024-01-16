@@ -1,7 +1,7 @@
-import registerKeyboard from "./key-borad";
-import registerGraphEvents from "./graph";
-import registerNodeEvents from "./node";
 import registerEdgeEvents from "./edge";
+import registerGraphEvents from "./graph";
+import registerKeyboard from "./key-borad";
+import registerNodeEvents from "./node";
 var registerEvents = function registerEvents(graph) {
   // 注册节点事件
   registerNodeEvents(graph);

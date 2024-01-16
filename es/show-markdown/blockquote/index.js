@@ -6,8 +6,8 @@
  * @return:
  * @updateTime:
  **/
-import * as React from 'react';
 import { isFunction, isObject } from '@iicoding/utils';
+import * as React from 'react';
 import "./index.less";
 var B = function B(props) {
   var children = props.children;

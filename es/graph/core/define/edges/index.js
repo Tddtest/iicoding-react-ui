@@ -12,7 +12,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 // eslint-disable-next-line max-classes-per-file
-import { Shape, Edge } from '@antv/x6';
+import { Edge, Shape } from '@antv/x6';
 
 // 方便扩展连接线相关需求，保留一个基类。
 export var BaseEdge = /*#__PURE__*/function (_Shape$Edge) {

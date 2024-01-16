@@ -7,8 +7,8 @@
  * @updateTime:
  **/
 
-import registerPlugin from "./plugin";
 import registerEvents from "./event";
+import registerPlugin from "./plugin";
 var registerAction = function registerAction(graph) {
   // 插件注册
   registerPlugin(graph);

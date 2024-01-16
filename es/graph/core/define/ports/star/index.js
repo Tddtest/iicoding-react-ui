@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
 import { PortManager } from '@antv/x6/es/model/port';
+import React, { memo } from 'react';
 var Port = PortManager.Port;
 import "./index.less";
 var S = function S() {

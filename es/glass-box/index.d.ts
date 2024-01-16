@@ -1,5 +1,5 @@
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import React from 'react';
-import type { ReactNode, CSSProperties, HTMLAttributes } from 'react';
 import './index.less';
 export interface IGlassBoxProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;

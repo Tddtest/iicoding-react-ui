@@ -1,7 +1,7 @@
 import { Graph } from '@antv/x6';
-import type { X6GraphicsOptions } from './interface';
-import './define/nodes';
 import './define/connector';
+import './define/nodes';
+import type { X6GraphicsOptions } from './interface';
 declare class X6Graph {
     graph?: Graph;
     init: (options?: X6GraphicsOptions) => void;
