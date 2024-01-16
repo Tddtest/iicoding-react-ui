@@ -25,16 +25,15 @@ import { executeNodeMethods } from "./execute";
 import { Content, ContentBox, EditContent, EditContentBox, Icon, NodeContent } from "./style";
 import "./index.less";
 var nodeWeekMap = new WeakMap();
-var setDomSelectionRange = function setDomSelectionRange(el) {
-  var range = document.createRange();
-  range.collapse();
-  range.selectNode(el);
-  if (window) {
-    var _window$getSelection, _window$getSelection2;
-    (_window$getSelection = window.getSelection()) === null || _window$getSelection === void 0 || _window$getSelection.removeAllRanges();
-    (_window$getSelection2 = window.getSelection()) === null || _window$getSelection2 === void 0 || _window$getSelection2.addRange(range);
-  }
-};
+// const setDomSelectionRange = (el: HTMLElement) => {
+//   const range = document.createRange();
+//   range.collapse();
+//   range.selectNode(el);
+//   if (window) {
+//     window.getSelection()?.removeAllRanges();
+//     window.getSelection()?.addRange(range);
+//   }
+// };
 var defaultData = {
   info: {
     nodeType: 'text-node',
@@ -78,7 +77,7 @@ var T = function T(props) {
     }
   };
   var onFocus = function onFocus(e) {
-    setDomSelectionRange(e.target);
+    // setDomSelectionRange(e.target);
   };
   var onBlur = function onBlur(e) {
     setValue(e.target.innerHTML);
